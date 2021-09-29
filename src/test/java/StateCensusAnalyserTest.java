@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import stateCensus.CsvException;
 import stateCensus.StateCensusAnalyser;
+import stateCensus.StateCode;
 
 public class StateCensusAnalyserTest {
 
@@ -17,7 +18,7 @@ public class StateCensusAnalyserTest {
 		try {
 			StateCensusAnalyser analyser = new StateCensusAnalyser(
 					"/Users/panchamishenoy/Desktop/assignment/IndianStateCensus/Data/data3.csv");
-			Assert.assertEquals(4, analyser.readStateRecord());
+			Assert.assertEquals(4, analyser.readStateRecord(StateCode.class));
 		} catch (CsvException e) {
 			System.out.println(e);
 		}
@@ -31,7 +32,7 @@ public class StateCensusAnalyserTest {
 		try {
 			StateCensusAnalyser analyser = new StateCensusAnalyser(
 					"/Users/panchamishenoy/Desktop/assignment/IndianStateCensus/Data/data4.csv");
-			analyser.readStateRecord();
+			analyser.readStateRecord(StateCode.class);
 		} catch (CsvException e) {
 			Assert.assertEquals("File not found", e.getMessage());
 			System.out.println(e);
@@ -47,7 +48,7 @@ public class StateCensusAnalyserTest {
 		try {
 			StateCensusAnalyser analyser = new StateCensusAnalyser(
 					"/Users/panchamishenoy/Desktop/assignment/IndianStateCensus/Data/data1.txt");
-			analyser.readStateRecord();
+			analyser.readStateRecord(StateCode.class);
 		} catch (CsvException e) {
 			Assert.assertEquals("Wrong Type", e.getMessage());
 			System.out.println(e);
@@ -62,7 +63,7 @@ public class StateCensusAnalyserTest {
 		try {
 			StateCensusAnalyser analyser = new StateCensusAnalyser(
 					"/Users/panchamishenoy/Desktop/assignment/IndianStateCensus/Data/data2.csv");
-			analyser.readStateRecord();
+			analyser.readStateRecord(StateCode.class);
 		} catch (CsvException e) {
 
 			System.out.println(e);
@@ -78,7 +79,7 @@ public class StateCensusAnalyserTest {
 		try {
 			StateCensusAnalyser analyser = new StateCensusAnalyser(
 					"/Users/panchamishenoy/Desktop/assignment/IndianStateCensus/Data/data1.csv");
-			analyser.readStateRecord();
+			analyser.readStateRecord(StateCode.class);
 		} catch (CsvException e) {
 
 			System.out.println(e);
